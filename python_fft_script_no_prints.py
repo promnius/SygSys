@@ -95,6 +95,12 @@ def calculate_twiddle_factor(num_samples, sample_number):
 	twiddle_factor = real_part + 1j*imaginary_part
 
 	return twiddle_factor
+
+def full_FFT(input_waveform):
+	decomposed_array = decompose(input_waveform)
+	recomposed_frequency = recompose_all_levels(decomposed_array)
+	return recomposed_frequency
+
 	
 """Tests the FFT functions, and displays a visual of the frequency content of various waves."""
 def main():
